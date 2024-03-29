@@ -1,12 +1,12 @@
 import React from "react"
-import mail from "../assets/maillogo.png"
-import calllogo from "../assets/calllogo.png"
+import mail from "../assets/img/maillogo.png"
+import calllogo from "../assets/img/calllogo.png"
 
 
 
 export default function Footer() {
     return (
-      <div id="contact" className='py-10 mt-16 bg-black text-white font-Raleway'>
+      <div id="contact" className='py-10 mt-16 bg-black/95 text-white font-Raleway'>
         <div className='items-center'>
             <div className="container mb-10">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-16 px-14 items-center py-4 text-center sm:text-start">
@@ -36,7 +36,7 @@ export default function Footer() {
                 </div>
             </div>
             <hr className=" border-gray-400 border-1" />
-            <p className="text-center mt-8 text-sm text-gray-400">Copyright @ Blink</p>
+            <p className="text-center mt-8 text-sm text-gray-400">copyright @ Blink</p>
         </div>
       </div>
     )

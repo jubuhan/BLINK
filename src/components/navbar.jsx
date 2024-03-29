@@ -1,12 +1,12 @@
 import React from 'react'
-import logonav from "../assets/logonav.png"
-import Hamlogo from "../assets/hamburger.png"
-import closelogo from "../assets/close.png"
-import invitelogo from "../assets/invite.png"
-import helplogo from "../assets/help.png"
-import homelogo from "../assets/home.png"
-import servicelogo from "../assets/services.png"
-import aboutlogo from "../assets/about.png"
+import logonav from "../assets/img/logonav.png"
+import Hamlogo from "../assets/img/hamburger.png"
+import closelogo from "../assets/img/close.png"
+import invitelogo from "../assets/img/invite.png"
+import helplogo from "../assets/img/help.png"
+import homelogo from "../assets/img/home.png"
+import servicelogo from "../assets/img/services.png"
+import aboutlogo from "../assets/img/about.png"
 
 export default function navbar() {
   const[hamClick,setHamClick]=React.useState(false)
@@ -31,7 +31,7 @@ export default function navbar() {
                 </ul>
             </div>
             <div className='flex items-center justify-end'>
-              <button className='w-[100px] text-white bg-black rounded-xl px-3 py-2 hover:scale-105 transition duration-300 hover:shadow-lg hover:bg-white hover:text-black'>Login</button>
+              <button className='w-[100px] text-white bg-black/95 rounded-xl px-3 py-2 hover:scale-105 transition duration-300 hover:shadow-lg hover:bg-white hover:text-black'>Login</button>
             </div>
         </div>
       </div>

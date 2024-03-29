@@ -111,7 +111,7 @@ export const InfiniteMovingCards = ({
                   <p className=" uppercase text-sm leading-[1.6] text-black/50 font-Raleway">
                     {item.name}
                   </p>
-                  <button className="w-[150px] hover:bg-white hover:text-black hover:shadow-lg text-white bg-black font-Raleway rounded-xl px-2 py-2 hover:scale-105 transition duration-300">Get started</button>  
+                  <button className="w-[150px] hover:bg-white hover:text-black hover:shadow-lg text-white bg-black/95 font-Raleway rounded-xl px-2 py-2 hover:scale-105 transition duration-300">Get started</button>  
               </div>
             </blockquote>
           </li>
