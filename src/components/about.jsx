@@ -1,8 +1,10 @@
 import React from 'react'
 import bgimg from "../assets/img/bg.jpg"
+import { usePop } from '../stores/usePop'
+
 
 export default function about() {
-
+    const { pop, togglePop }=usePop();
     const words = `Are you tired of straining your eyes from constantly using smart screens? Do you find it hard to make time for expensive clinical eye tests on a weekly basis? Look no further, because at Blink, we offer free eye tests and eye exercises to help you relax your eyes without the need for any travel. Visit our website today to discover a wealth of resources for maintaining healthy eyes effortlessly.
     `;
 
@@ -16,7 +18,7 @@ export default function about() {
                         <h1 data-aos="zoom-in" className='text-2xl sm:text-6xl text-black uppercase font-bold'>Why Blink?</h1>
                         <p data-aos="fade-up" className=' mt-2  text-md sm:text-xl'>{words}</p>
                         <div data-aos="fade-up">
-                            <button  className="mt-5 w-[150px] hover:shadow-lg bg-black/95 border-black text-white hover:bg-white hover:text-black font-Raleway rounded-xl px-3 py-2 hover:scale-105 transition duration-300">Get started</button>
+                            <button onClick={togglePop}  className="mt-5 w-[150px] hover:shadow-lg bg-black/95 border-black text-white hover:bg-white hover:text-black font-Raleway rounded-xl px-3 py-2 hover:scale-105 transition duration-300">Get started</button>
                         </div>
                     </div>
                     <div data-aos="zoom-in" className='items-center z-5'>

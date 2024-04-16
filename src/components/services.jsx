@@ -1,19 +1,20 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { InfiniteMovingCards } from "../components/ui/infinite-moving-cards";
 
 
 export default function InfiniteMovingCardsDemo() {
   return (
     
-    <div className="py-4">
+    <div id="services" className="py-4">
             <div className="px-6">
               <div className="h-auto flex flex-col antialiased dark:bg-white dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
               <InfiniteMovingCards
                   items={testimonials}
                   direction="right"
                   speed="slow"
+                  
               />
               </div>
             </div>

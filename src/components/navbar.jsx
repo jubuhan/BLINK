@@ -7,9 +7,13 @@ import helplogo from "../assets/img/help.png"
 import homelogo from "../assets/img/home.png"
 import servicelogo from "../assets/img/services.png"
 import aboutlogo from "../assets/img/about.png"
+import { usePop } from '../stores/usePop'
 
-export default function navbar() {
+
+export default function navbar({handleclick}) {
   const[hamClick,setHamClick]=React.useState(false)
+  const { pop, togglePop } = usePop()
+
 
 
   return (
@@ -24,14 +28,14 @@ export default function navbar() {
             </div>
             <div className='items-center text-black  text-md sm:text-xl hidden sm:block'>
                 <ul className='flex justify-between gap-10'>
-                  <li><a className=' hover:opacity-70' href='/'>Home</a></li>
-                  <li><a className=' hover:opacity-70' href='#about'>About</a></li>
-                  <li><a className=' hover:opacity-70' href='#services'>Services</a></li>
-                  <li><a className=' hover:opacity-70' href='#contact'>Contact</a></li>
+                  <li><a className=' hover:underline hover:duration-500 underline-offset-8' href='/'>Home</a></li>
+                  <li><a className=' hover:underline hover:duration-500 underline-offset-8' href='#about'>About</a></li>
+                  <li><a className=' hover:underline hover:duration-500 underline-offset-8' href='#services'>Services</a></li>
+                  <li><a className=' hover:underline hover:duration-500 underline-offset-8' href='#contact'>Contact</a></li>
                 </ul>
             </div>
             <div className='flex items-center justify-end'>
-              <button className='w-[100px] text-white bg-black/95 rounded-xl px-3 py-2 hover:scale-105 transition duration-300 hover:shadow-lg hover:bg-white hover:text-black'>Login</button>
+              <button  onClick={togglePop} className='w-[100px] text-white bg-black/95 rounded-xl px-3 py-2 hover:scale-105 transition duration-300 hover:shadow-lg hover:bg-white hover:text-black'>Login</button>
             </div>
         </div>
       </div>

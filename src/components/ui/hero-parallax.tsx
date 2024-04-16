@@ -1,5 +1,5 @@
-"use client";
 import React from "react";
+import { usePop } from "../../stores/usePop";
 
 import {
   motion,
@@ -101,6 +101,8 @@ export const HeroParallax = ({
 };
 
 export const Header = () => {
+  const {pop, togglePop} = usePop();
+
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-10 top-0 font-Raleway z-10">
       <h1 data-aos="zoom-out" className="text-2xl md:text-7xl font-bold dark:text-white tracking-widest letter-spacing: 0.1em ">
@@ -110,7 +112,7 @@ export const Header = () => {
       Welcome to Blink ! see the world in full spectrum.
       </p>
       <div data-aos="fade-up">
-        <button  className="z-20 shadow-lg mt-10 w-[150px] text-black bg-white font-Raleway rounded-xl px-3 py-2 hover:scale-105 transition duration-300">Get started</button>
+        <button onClick={togglePop} className="z-20 shadow-lg mt-10 w-[150px] text-black bg-white font-Raleway rounded-xl px-3 py-2 hover:scale-105 transition duration-300">Get started</button>
       </div>
     </div>
   );

@@ -4,12 +4,14 @@ import { cn } from "../../utils/cn";
 import React, { useEffect, useState } from "react";
 
 
+
 export const InfiniteMovingCards = ({
   items,
   direction = "left",
   speed = "fast",
   pauseOnHover = true,
   className,
+  
 }: {
   items: {
     quote: string;
@@ -21,9 +23,13 @@ export const InfiniteMovingCards = ({
   speed?: "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
   className?: string;
+  
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
+  
+ 
+  
 
   useEffect(() => {
     addAnimation();
@@ -101,7 +107,7 @@ export const InfiniteMovingCards = ({
             <blockquote>
               <div id="services"
                 aria-hidden="true"
-                className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_30px)] w-[calc(100%_+_4px)]"
+                className="z-1 absolute -left-0.5 -top-0.5 h-[calc(100%_+_30px)] w-[calc(100%_+_4px)]"
               ></div>
               <img className="object-cover rounded-2xl" src={item.thumbnail} alt="" />
               <p className="mt-5 relative z-20 text-sm leading-[1.6] text-black font-Raleway">
@@ -111,8 +117,7 @@ export const InfiniteMovingCards = ({
                   <p className=" uppercase text-sm leading-[1.6] text-black/50 font-Raleway">
                     {item.name}
                   </p>
-                  <button className="w-[150px] hover:bg-white hover:text-black hover:shadow-lg text-white bg-black/95 font-Raleway rounded-xl px-2 py-2 hover:scale-105 transition duration-300">Get started</button>  
-              </div>
+             </div>
             </blockquote>
           </li>
         ))}
