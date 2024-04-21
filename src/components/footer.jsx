@@ -6,7 +6,7 @@ import calllogo from "../assets/img/calllogo.png"
 
 export default function Footer() {
     return (
-      <div id="contact" className='py-10 mt-16 bg-black/95 text-white font-Raleway'>
+      <div id="contact" className='py-4 mt-16 bg-black/95 text-white font-Raleway'>
         <div className='items-center'>
             <div className="container mb-10">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-16 px-14 items-center py-4 text-center sm:text-start">

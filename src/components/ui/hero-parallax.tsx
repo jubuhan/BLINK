@@ -105,14 +105,14 @@ export const Header = () => {
 
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-10 top-0 font-Raleway z-10">
-      <h1 data-aos="zoom-out" className="text-2xl md:text-7xl font-bold dark:text-white tracking-widest letter-spacing: 0.1em ">
+      <h1 data-aos="zoom-out" className="text-6xl md:text-7xl font-bold dark:text-white tracking-widest letter-spacing: 0.1em ">
         BLINK
       </h1>
-      <p data-aos="fade-up" className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200 tracking-wider 	letter-spacing: 0.05em">
+      <p data-aos="fade-up" className="max-w-2xl text-lg md:text-xl mt-8 dark:text-neutral-200 tracking-wider 	letter-spacing: 0.05em">
       Welcome to Blink ! see the world in full spectrum.
       </p>
       <div data-aos="fade-up">
-        <button onClick={togglePop} className="z-20 shadow-lg mt-10 w-[150px] text-black bg-white font-Raleway rounded-xl px-3 py-2 hover:scale-105 transition duration-300">Get started</button>
+        <button onClick={togglePop} className="z-20 shadow-lg mt-10 w-[150px] text-black bg-white font-Raleway rounded-full px-3 py-2 hover:scale-105 transition duration-300">Get started</button>
       </div>
     </div>
   );

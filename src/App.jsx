@@ -4,7 +4,6 @@ import Herosection from "./components/Hero"
 import About from "./components/about"
 import InfiniteMovingCardsDemo from "./components/services"
 import Footers from "./components/footer"
-import Reviews from "./components/review"
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Login from "./components/Pop"

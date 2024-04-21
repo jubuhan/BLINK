@@ -105,7 +105,7 @@ export const InfiniteMovingCards = ({
             key={item.name}
           >
             <blockquote>
-              <div id="services"
+              <div 
                 aria-hidden="true"
                 className="z-1 absolute -left-0.5 -top-0.5 h-[calc(100%_+_30px)] w-[calc(100%_+_4px)]"
               ></div>
