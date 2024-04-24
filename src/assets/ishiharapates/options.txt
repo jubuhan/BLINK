@@ -1,0 +1,14 @@
+29    70    Nothing
+5      2     9
+3      5     8
+74    21    14
+6      Nothing    9
+16    Nothing    18
+Nothing 49    5
+Nothing 45    20
+Nothing  73  18
+26      6     2
+96     6     9
+purple and red spots      only purple line     only red line
+Nothing     a line      Violet line
+Orange line    Nothing or false line   Nothing or false line 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import Navbar from './navbar'
 import visualicon from "../assets/img/visualicon.png"
 import cubeicon from "../assets/img/cubeicon.png"
@@ -8,10 +9,9 @@ import homebanner from "../assets/img/homebanner.png"
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Footer from './footer'
-
 export default function Home() {
 
-
+    const navigate = useNavigate();
 
     React.useEffect(()=>{
         AOS.init(
@@ -39,6 +39,7 @@ export default function Home() {
                             </div>
                             <div className=' flex flex-col items-center gap-10 mt-10'>
                                 <h1 data-aos="zoom-in" className='uppercase text-black/95 text-4xl sm:text-6xl font-medium'>Vision Test & Exercise</h1>
+                                
                                 <p  data-aos="fade-up" data-aos-delay="0" className='text-lg sm:text-xl mt-16 text-center'>Wondering how accurate your eyesight really is ? Try out this quick eye test to find out how well you can see!</p>
                                 <p  data-aos="fade-up" data-aos-delay="200" className='text-lg sm:text-xl text-center mt-4'>With this test, you will have the opportunity to assess your visual acuity, your potential visual fatigue, your colour vision and even your visual reflexes.</p>
                             </div>
@@ -63,7 +64,7 @@ export default function Home() {
                                         <p className='text-lg sm:text-xl'>Colour cube game</p>
                                     </div>
                                     <div>
-                                        <button className='w-[100px] hover:shadow-lg bg-black/95 border-black text-white hover:bg-white hover:text-black font-Raleway rounded-full px-3 py-2 hover:scale-105 transition duration-300'>Take test</button>
+                                        <button onClick={()=>navigate("/colorcube")} className='w-[100px] hover:shadow-lg bg-black/95 border-black text-white hover:bg-white hover:text-black font-Raleway rounded-full px-3 py-2 hover:scale-105 transition duration-300'>Take test</button>
                                     </div>
                                 </div>
                                 <div data-aos="fade-up" data-aos-delay="200" className='flex items-center justify-between shadow-lg rounded-xl border py-4 px-4 hover:scale-105 duration-300'>
@@ -72,7 +73,7 @@ export default function Home() {
                                         <p className='text-lg sm:text-xl '>Color blindenss</p>
                                     </div>
                                     <div>
-                                        <button className='w-[100px] hover:shadow-lg bg-black/95 border-black text-white hover:bg-white hover:text-black font-Raleway rounded-full px-3 py-2 hover:scale-105 transition duration-300'>Take test</button>
+                                        <button onClick={()=>navigate("/colourBlindessTest")} className='w-[100px] hover:shadow-lg bg-black/95 border-black text-white hover:bg-white hover:text-black font-Raleway rounded-full px-3 py-2 hover:scale-105 transition duration-300'>Take test</button>
                                     </div>
                                 </div>
                                 <div data-aos="fade-up" data-aos-delay="300" className='flex items-center justify-between shadow-lg rounded-xl border py-4 px-4 hover:scale-105 duration-300'>
@@ -85,7 +86,7 @@ export default function Home() {
                                     </div>
                                 </div>
 
-                                <h1 className='text-2xl sm:text-4xl font-bold text-black/95 mb-8'>Eye exercise</h1>
+                                <h1 className='text-2xl sm:text-4xl font-bold text-black/95 mb-4'>Eye exercise</h1>
                                 <hr className='py-6' />
 
                                 <div data-aos="fade-up" data-aos-delay="400" className='flex items-center justify-between shadow-lg rounded-xl border py-4 px-4 hover:scale-105 duration-300'>
