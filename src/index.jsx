@@ -2,8 +2,9 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Home from "./components/Home"
-import ColorCubeGame from "./components/ColorCubeGame";
-import ColourBlindessTest from "./components/ColourBlindess";
+import Colorcube from "./components/colourcube/ColorCubeMain";
+import ColorBlindnessMain from "./components/colourblindness/ColorBlindnessMain";
+import VisualAcuityMain from "./components/visualacuity/VisualAcuityMain";
 export default function index() {
     const router = createBrowserRouter([
         {
@@ -15,12 +16,16 @@ export default function index() {
           element : <Home />
         },
         {
-          path : '/colourcube',
-          element : <ColorCubeGame />
+          path : '/colourblindesstest',
+          element : <ColorBlindnessMain />
         },
         {
-          path : '/colourBlindessTest',
-          element : <ColourBlindessTest />
+          path : '/colourcube',
+          element : <Colorcube />
+        },
+        {
+          path : '/visualacuitytest',
+          element : <VisualAcuityMain />
         },
         
     ])

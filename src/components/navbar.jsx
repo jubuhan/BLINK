@@ -17,7 +17,7 @@ export default function navbar() {
 
 
   return (
-    <div className='bg-white duration-200 z-40 fixed w-full font-Raleway shadow-md'>
+    <div id="top" className='bg-white duration-200 z-40 sticky w-full font-Raleway shadow-md'>
       <div className='py-4'>
         <div className='px-6 flex justify-between items-center gap-4'>
             <div className='flex justify-between items-center gap-4'>

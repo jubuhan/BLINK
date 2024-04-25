@@ -9,6 +9,7 @@ import homebanner from "../assets/img/homebanner.png"
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Footer from './footer'
+import LoaderSimple from './Loading'
 export default function Home() {
 
     const navigate = useNavigate();
@@ -30,11 +31,12 @@ export default function Home() {
     return (
         <>
         <Navbar />
+        <LoaderSimple />
             <div className='bg-white font-Raleway h-auto py-12'>
                 <div className='py-4 px-6'>
                     
                         <div className='grid grid-cols-1 sm:grid-cols-2 gap-6 py-16 '>
-                            <div data-aos="slide-right" >
+                            <div data-aos="zoom-in" data-aos-delay="500" >
                                 <img className=' w-full ' src={homebanner} alt="homebanner" />
                             </div>
                             <div className=' flex flex-col items-center gap-10 mt-10'>
@@ -55,7 +57,7 @@ export default function Home() {
                                         <p className='text-lg sm:text-xl '>Visual Acuity</p>
                                     </div>
                                     <div>
-                                        <button className='w-[100px] hover:shadow-lg bg-black/95 border-black text-white hover:bg-white hover:text-black font-Raleway rounded-full px-3 py-2 hover:scale-105 transition duration-300'>Take test</button>
+                                        <button onClick={()=>navigate("/visualacuitytest")} className='w-[100px] hover:shadow-lg bg-black/95 border-black text-white hover:bg-white hover:text-black font-Raleway rounded-full px-3 py-2 hover:scale-105 transition duration-300'>Take test</button>
                                     </div>
                                 </div>
                                 <div data-aos="fade-up" data-aos-delay="100" className='flex items-center justify-between shadow-lg rounded-xl border py-4 px-4 hover:scale-105 duration-300'>
@@ -64,16 +66,16 @@ export default function Home() {
                                         <p className='text-lg sm:text-xl'>Colour cube game</p>
                                     </div>
                                     <div>
-                                        <button onClick={()=>navigate("/colorcube")} className='w-[100px] hover:shadow-lg bg-black/95 border-black text-white hover:bg-white hover:text-black font-Raleway rounded-full px-3 py-2 hover:scale-105 transition duration-300'>Take test</button>
+                                        <button onClick={()=>navigate("/colourcube")} className='w-[100px] hover:shadow-lg bg-black/95 border-black text-white hover:bg-white hover:text-black font-Raleway rounded-full px-3 py-2 hover:scale-105 transition duration-300'>Take test</button>
                                     </div>
                                 </div>
                                 <div data-aos="fade-up" data-aos-delay="200" className='flex items-center justify-between shadow-lg rounded-xl border py-4 px-4 hover:scale-105 duration-300'>
                                     <div className='flex items-center gap-4'>
                                         <img className='w-8' src={coloricon} alt="visualicon" />
-                                        <p className='text-lg sm:text-xl '>Color blindenss</p>
+                                        <p className='text-lg sm:text-xl '>Color blindness</p>
                                     </div>
                                     <div>
-                                        <button onClick={()=>navigate("/colourBlindessTest")} className='w-[100px] hover:shadow-lg bg-black/95 border-black text-white hover:bg-white hover:text-black font-Raleway rounded-full px-3 py-2 hover:scale-105 transition duration-300'>Take test</button>
+                                        <button onClick={()=>navigate("/colourblindesstest")} className='w-[100px] hover:shadow-lg bg-black/95 border-black text-white hover:bg-white hover:text-black font-Raleway rounded-full px-3 py-2 hover:scale-105 transition duration-300'>Take test</button>
                                     </div>
                                 </div>
                                 <div data-aos="fade-up" data-aos-delay="300" className='flex items-center justify-between shadow-lg rounded-xl border py-4 px-4 hover:scale-105 duration-300'>
@@ -110,7 +112,7 @@ export default function Home() {
                                 <div data-aos="fade-up" data-aos-delay="600" className='flex items-center justify-between shadow-lg rounded-xl border py-4 px-4 hover:scale-105 duration-300'>
                                     <div className='flex items-center gap-4'>
                                         <img className='w-8' src={coloricon} alt="visualicon" />
-                                        <p className='text-lg sm:text-xl '>Color blindenss</p>
+                                        <p className='text-lg sm:text-xl '>Color blindness</p>
                                     </div>
                                     <div>
                                         <button className='w-[100px] hover:shadow-lg bg-black/95 border-black text-white hover:bg-white hover:text-black font-Raleway rounded-full px-3 py-2 hover:scale-105 transition duration-300'>Take test</button>

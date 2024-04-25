@@ -22,7 +22,8 @@ function LoaderSimple(props) {
         } else {
             controls.start({
                 opacity: 0,
-                transition: { duration: 1 }
+                transition: { duration: 1 },
+                transitionEnd: { display: "none" }
             });
         }
     }, [loading, controls]);

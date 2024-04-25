@@ -2,8 +2,10 @@ import React from 'react'
 import google from "../assets/img/google.png"
 import close from "../assets/img/close.png"
 import { usePop } from '../stores/usePop'
+import { useNavigate } from 'react-router-dom'
 
 export default function Pop() {
+    const navigate = useNavigate();
     const { pop, togglePop } = usePop()
   return (
     <>
@@ -19,7 +21,7 @@ export default function Pop() {
                 <div className='flex flex-col gap-3'>
                     <input type="text" placeholder='Username' className='mt-6 w-full rounded-xl border border-gray-300 px-2 py-1 ' />
                     <input type="text" placeholder='Password' className='w-full rounded-xl border border-gray-300 px-2 py-1 ' />
-                    <button className='w-full cursor-pointer hover:shadow-lg hover:scale-105 duration-300 px-3 py-2 rounded-xl text-white bg-black/95 hover:bg-white hover:text-black'>Login</button>
+                    <button onClick={()=>navigate("/home")} className='w-full cursor-pointer hover:shadow-lg hover:scale-105 duration-300 px-3 py-2 rounded-xl text-white bg-black/95 hover:bg-white hover:text-black'>Login</button>
                     <p className='text-center font-light'>or</p>
                     <div className='flex justify-between relative items-center'>
                         <img  className='w-8 absolute' src={google} alt="google" />

@@ -1,6 +1,7 @@
 import React from "react"
 import mail from "../assets/img/maillogo.png"
 import calllogo from "../assets/img/calllogo.png"
+import uparrow from "../assets/img/uparrow.svg"
 
 
 
@@ -9,7 +10,7 @@ export default function Footer() {
       <div id="contact" className='py-4 mt-16 bg-black/95 text-white font-Raleway'>
         <div className='items-center'>
             <div className="container mb-10">
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-16 px-14 items-center py-4 text-center sm:text-start">
+                <div className="grid grid-cols-1 sm:grid-cols-4 gap-16 px-14 items-center py-4 text-center sm:text-start">
                     <div className="items-center">
                         <h1 className="font-extrabold uppercase text-4xl">Blink</h1>
                         
@@ -32,6 +33,9 @@ export default function Footer() {
                             <img className="w-4" src={mail} alt="calllogo" />
                             <span className="cursor-pointer text-sm sm:text-md text-gray-400">blinkorg@gmail.com</span>
                         </div>
+                    </div>
+                    <div className="flex sm:justify-end justify-center">
+                        <a className="items-center duration-300" href="#top"><img className="w-3 inline mr-2" src={uparrow} alt="uparrow" />Back to Top</a>
                     </div>
                 </div>
             </div>

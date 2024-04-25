@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import LoaderSimple from './Loading';
+import Navbar from "../../components/navbar"
 
 export const ColorCubeGame = () => {
   const [score, setScore] = useState(0);
   const [currentCube, setCurrentCube] = useState(0);
   const [round, setRound] = useState(1);
+  const [gameStarted, setGameStarted] = useState(false);
   const [cubes, setCubes] = useState(
     Array.from({ length: 36 }, (_, i) => ({
       id: i,
@@ -25,7 +26,7 @@ export const ColorCubeGame = () => {
         });
         newCubes[oddCubeIndex].color = '#4fc93c';
         break;
-      
+
       case 3:
         newCubes.forEach((cube, index) => {
           cube.color = '#1760d2';
@@ -33,27 +34,27 @@ export const ColorCubeGame = () => {
         newCubes[oddCubeIndex].color = '#068cdb';
         break;
 
-        case 4:
+      case 4:
         newCubes.forEach((cube, index) => {
           cube.color = '#7d186d';
         });
         newCubes[oddCubeIndex].color = '#91197e';
         break;
 
-        case 5:
+      case 5:
         newCubes.forEach((cube, index) => {
           cube.color = '#187d2c';
         });
         newCubes[oddCubeIndex].color = '#1b8d3b';
         break;
-      
+
       case 6:
         newCubes.forEach((cube, index) => {
           cube.color = '#ab4842';
         });
         newCubes[oddCubeIndex].color = '#a75148';
         break;
-        case 7:
+      case 7:
         newCubes.forEach((cube, index) => {
           cube.color = '#34cebb';
         });
@@ -65,21 +66,21 @@ export const ColorCubeGame = () => {
         });
         newCubes[oddCubeIndex].color = '#e96353';
         break;
-        case 9:
+      case 9:
         newCubes.forEach((cube, index) => {
           cube.color = '#d3b939';
         });
         newCubes[oddCubeIndex].color = '#e0c92c';
         break;
-        case 10:
-          newCubes.forEach((cube, index) => {
-            cube.color = '#008080';
-          });
-          newCubes[oddCubeIndex].color = '#1b857d';
-          break;
-     
-     
-        
+      case 10:
+        newCubes.forEach((cube, index) => {
+          cube.color = '#008080';
+        });
+        newCubes[oddCubeIndex].color = '#1b857d';
+        break;
+
+
+
       default:
         break;
     }
@@ -123,44 +124,66 @@ export const ColorCubeGame = () => {
     }
   };
 
+  const startGame = () => {
+    setGameStarted(true);
+    
+  };
+
+
   return (
     <>
-     <LoaderSimple />
-      <div className='font-Raleway'>
-        <div className='py-10'>
-          <div className='container flex items-center flex-col'>
-            <h1 className='sm:text-6xl text-4xl font-medium text-center'>Color Cube Game</h1>
-            <div className='max-w-[800px] mt-20 bg-black/95 shadow-2xl border-t-2 rounded-2xl'>
-              <div className='max-w-[650px] sm:w-[700px] grid sm:grid-cols-6 grid-cols-4 gap-10 py-10 px-10 sm:px-12'>
-                {cubes.map((cube) => (
-                  <div
-                    className='flex items-center gap-0 w-16 h-16 sm:w-20 sm:h-20 cursor-pointer '
-                    key={cube.id}
-                    onClick={() => handleCubeClick(cube.id)}
-                    style={{
-                      backgroundColor: cube.color,
-                    }}
-                  />
-                ))}
-              </div>
-            </div>
-            
-            <div className='flex flex-col gap-5 items-center mt-16'>
-              <table className='border-black border-4 w-[200px] h-[150px] text-center'>
-                <tr className='border-black border-4'>
-                  <th>Round</th>
-                  <th className='border-l-4 border-black'>Score</th>
-                  
-                </tr>
-                <tr>
-                  <td>{round-1}/10</td>
-                  <td className='border-l-4 border-black'>{score}</td>
-                </tr>
-              </table>
+      <Navbar />
+      {!gameStarted ? (
+        <div className='py-10 font-Raleway '>
+          <div className='container px-2'>
+            <div className='flex flex-col items-center gap-6 '>
+              <h1 className='sm:text-6xl text-4xl font-medium text-center'>Color Cube Game</h1>
+              <p className='text-2xl mt-5 text-center'>In this game, you need to find the cube with a slightly different
+                color from the rest and click on it to score points. The game has 10 rounds, and the colors will change in each round.
+              </p>
+              <button onClick={startGame} className='mt-5 w-[150px] hover:shadow-lg hover:scale-105 transition duration-300 hover:bg-white hover:text-black bg-black/95 border-black text-white font-Raleway rounded-full px-3 py-2 '>Start test</button>
             </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div className=' font-Raleway'>
+          <div className='py-10'>
+            <div className='container flex items-center flex-col'>
+              <h1 className='sm:text-6xl text-4xl font-medium text-center'>Color Cube Game</h1>
+              <div className='max-w-[800px] mt-20 bg-black/95 shadow-2xl border-t-2 rounded-2xl'>
+                <div className='max-w-[650px] sm:w-[700px] grid sm:grid-cols-6 grid-cols-4 gap-10 py-10 mr-4 px-6 sm:px-12'>
+                  {cubes.map((cube) => (
+                    <div
+                      className='flex items-center gap-0 w-16 h-16 sm:w-20 sm:h-20 cursor-pointer '
+                      key={cube.id}
+                      onClick={() => handleCubeClick(cube.id)}
+                      style={{
+                        backgroundColor: cube.color,
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className='flex flex-col gap-5 items-center mt-16'>
+                <table className='border-black border-4 w-[200px] h-[150px] text-center'>
+                  <thead>
+                    <tr className='border-black border-4'>
+                      <th>Round</th>
+                      <th className='border-l-4 border-black'>Score</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{round - 1}/10</td>
+                      <td className='border-l-4 border-black'>{score}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };
