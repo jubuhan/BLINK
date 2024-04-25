@@ -5,6 +5,7 @@ import Home from "./components/Home"
 import Colorcube from "./components/colourcube/ColorCubeMain";
 import ColorBlindnessMain from "./components/colourblindness/ColorBlindnessMain";
 import VisualAcuityMain from "./components/visualacuity/VisualAcuityMain";
+import EyeExerciseMain from "./components/Eyeexercise/EyeExerciseMain";
 export default function index() {
     const router = createBrowserRouter([
         {
@@ -26,6 +27,10 @@ export default function index() {
         {
           path : '/visualacuitytest',
           element : <VisualAcuityMain />
+        },
+        {
+          path : '/eye-exercise',
+          element : <EyeExerciseMain />
         },
         
     ])
