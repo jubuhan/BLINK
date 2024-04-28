@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from "../../components/navbar";
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Astigmatism = () => {
+    const navigate = useNavigate();
     const [currentStep, setCurrentStep] = useState(0);
     const [isReady, setIsReady] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -31,7 +32,7 @@ const Astigmatism = () => {
             return (
                 <div className='px-2 text-center'>
                     <p className='text-xl sm:text-2xl mt-5'>Because you see all the lines in the images black and clear, you may not have Astigmatism.</p>
-                    <Link to="/home" className='mt-5 w-[150px] hover:shadow-lg hover:scale-105 transition duration-300 hover:bg-white hover:text-black bg-black/95 border-black text-white font-Raleway rounded-full px-3 py-2'>Back to Test</Link>
+                    <button onClick={()=>navigate("/home")} className='mt-5 w-[150px] hover:shadow-lg hover:scale-105 transition duration-300 hover:bg-white hover:text-black bg-black/95 border-black text-white font-Raleway rounded-full px-3 py-2'>Back to Test</button>
                 </div>
             )
         }
@@ -40,7 +41,7 @@ const Astigmatism = () => {
                 <div className='px-2 text-center'>
                     <p className='text-xl sm:text-2xl mt-5'>You are having minor signs of astigmatism for both eyes.</p>
                     <p className='text-xl sm:text-2xl mt-5'>Visit your eye care practitioner and get your eyes thoroughly checked</p>
-                    <Link to="/home" className='mt-5 w-[150px] hover:shadow-lg hover:scale-105 transition duration-300 hover:bg-white hover:text-black bg-black/95 border-black text-white font-Raleway rounded-full px-3 py-2'>Back to Test</Link>
+                    <button onClick={()=>navigate("/home")} className='mt-5 w-[150px] hover:shadow-lg hover:scale-105 transition duration-300 hover:bg-white hover:text-black bg-black/95 border-black text-white font-Raleway rounded-full px-3 py-2'>Back to Test</button>
                 </div>
             )
         }
@@ -49,7 +50,7 @@ const Astigmatism = () => {
                 <div className='px-2 text-center'>
                     <p className='text-xl sm:text-2xl mt-5'>There may be a possibility that your <span className='font-bold'>Right</span> eye might be astigmatic as you seem to see some lines darker than the rest.</p>
                     <p className='text-xl sm:text-2xl mt-5'>Visit your eye doctor to get your eyes checked.</p>
-                    <Link to="/home" className='mt-5 w-[150px] hover:shadow-lg hover:scale-105 transition duration-300 hover:bg-white hover:text-black bg-black/95 border-black text-white font-Raleway rounded-full px-3 py-2'>Back to Test</Link>
+                    <button onClick={()=>navigate("/home")} className='mt-5 w-[150px] hover:shadow-lg hover:scale-105 transition duration-300 hover:bg-white hover:text-black bg-black/95 border-black text-white font-Raleway rounded-full px-3 py-2'>Back to Test</button>
                 </div>
             )
         }
@@ -58,7 +59,7 @@ const Astigmatism = () => {
                 <div className='px-2 text-center'>
                     <p className='text-xl sm:text-2xl mt-5'>There may be a possibility that your <span className='font-bold'>Left</span> eye might be astigmatic as you seem to see some lines darker than the rest.</p>
                     <p className='text-xl sm:text-2xl mt-5'>Visit your eye doctor to get your eyes checked.</p>
-                    <Link to="/home" className='mt-5 w-[150px] hover:shadow-lg hover:scale-105 transition duration-300 hover:bg-white hover:text-black bg-black/95 border-black text-white font-Raleway rounded-full px-3 py-2'>Back to Test</Link>
+                    <button onClick={()=>navigate("/home")} className='mt-5 w-[150px] hover:shadow-lg hover:scale-105 transition duration-300 hover:bg-white hover:text-black bg-black/95 border-black text-white font-Raleway rounded-full px-3 py-2'>Back to Test</button>
                 </div>
             )
         }

@@ -47,15 +47,15 @@ const VisualAcuity = () => {
             <Navbar />
             <div className='font-Raleway py-10'>
                 <div className='container'>
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center gap-6">
                         <h1 className='sm:text-6xl text-4xl font-medium text-center'>Visual Acuity Test</h1>
                         {
                             gameStarted ? (
                                 stopped ? (
-                                    <>
+                                    <div className='flex flex-col gap-6'>
                                         <p className='text-2xl mt-10'><span className='font-bold'>Result: </span>{result}</p>
-                                        <button onClick={()=>navigate("/home")} className='mt-5 w-[150px] hover:shadow-lg hover:scale-105 transition duration-300 hover:bg-white hover:text-black bg-black/95 border-black text-white font-Raleway rounded-full px-3 py-2'>Back to Tests</button>
-                                    </>
+                                        <button className='mt-5 w-[150px] hover:shadow-lg hover:scale-105 transition duration-300 hover:bg-white hover:text-black bg-black/95 border-black text-white font-Raleway rounded-full px-3 py-2' onClick={()=>navigate("/home")} >Back to Tests</button>
+                                    </div>
                                 ) : (
                                     <>
                                         <img className='mt-10' src={imageData[currentIndex].src} alt={`Image ${currentIndex + 1}`} />
