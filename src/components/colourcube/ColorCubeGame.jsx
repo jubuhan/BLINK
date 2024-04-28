@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import Navbar from "../../components/navbar"
+import { useNavigate } from 'react-router-dom';
 
 export const ColorCubeGame = () => {
+  const navigate = useNavigate();
   const [score, setScore] = useState(0);
   const [currentCube, setCurrentCube] = useState(0);
   const [round, setRound] = useState(1);
   const [gameStarted, setGameStarted] = useState(false);
+  const [gameFinished, setGameFinished] = useState(false);
   const [cubes, setCubes] = useState(
     Array.from({ length: 36 }, (_, i) => ({
       id: i,
@@ -79,8 +82,6 @@ export const ColorCubeGame = () => {
         newCubes[oddCubeIndex].color = '#1b857d';
         break;
 
-
-
       default:
         break;
     }
@@ -95,15 +96,7 @@ export const ColorCubeGame = () => {
         setRound(round + 1);
         generateCubes();
       } else {
-        alert(`Final Score: ${score + 1}`);
-        setScore(0);
-        setRound(1);
-        setCubes(
-          Array.from({ length: 36 }, (_, i) => ({
-            id: i,
-            color: '#ff0000',
-          }))
-        );
+        setGameFinished(true);
       }
     } else {
       setScore(score);
@@ -111,24 +104,27 @@ export const ColorCubeGame = () => {
         setRound(round + 1);
         generateCubes();
       } else {
-        alert(`Final Score: ${score}`);
-        setScore(0);
-        setRound(1);
-        setCubes(
-          Array.from({ length: 36 }, (_, i) => ({
-            id: i,
-            color: '#ff0000',
-          }))
-        );
+        setGameFinished(true);
       }
     }
   };
 
   const startGame = () => {
     setGameStarted(true);
-    
+    setGameFinished(false);
   };
 
+  const restartGame = () => {
+    setScore(0);
+    setRound(1);
+    setCubes(
+      Array.from({ length: 36 }, (_, i) => ({
+        id: i,
+        color: '#ff0000',
+      }))
+    );
+    setGameFinished(false);
+  };
 
   return (
     <>
@@ -142,6 +138,27 @@ export const ColorCubeGame = () => {
                 color from the rest and click on it to score points. The game has 10 rounds, and the colors will change in each round.
               </p>
               <button onClick={startGame} className='mt-5 w-[150px] hover:shadow-lg hover:scale-105 transition duration-300 hover:bg-white hover:text-black bg-black/95 border-black text-white font-Raleway rounded-full px-3 py-2 '>Start test</button>
+            </div>
+          </div>
+        </div>
+      ) : gameFinished ? (
+        <div className='py-10 font-Raleway'>
+          <div className='container flex flex-col items-center'>
+            <h1 className='sm:text-6xl text-4xl font-medium text-center'>Game Finished</h1>
+            <p className='text-2xl mt-5 text-center'>Your final score is: {score}</p>
+            <div className='flex gap-4 mt-8'>
+              <button
+                onClick={restartGame}
+                className='w-[150px] hover:shadow-lg hover:scale-105 transition duration-300 hover:bg-white hover:text-black bg-black/95 border-black text-white font-Raleway rounded-full px-3 py-2'
+              >
+                Restart Game
+              </button>
+              <button
+                onClick={() => navigate('/home')}
+                className='w-[150px] hover:shadow-lg hover:scale-105 transition duration-300 hover:bg-white hover:text-black bg-black/95 border-black text-white font-Raleway rounded-full px-3 py-2'
+              >
+                Back to Test
+              </button>
             </div>
           </div>
         </div>
