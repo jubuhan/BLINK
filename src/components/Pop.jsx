@@ -43,15 +43,22 @@ export default function Pop() {
     }
 
     try {
+      // Check if the email is valid
+      const methods = await auth.fetchSignInMethodsForEmail(email);
+      if (methods.length === 0) {
+        setError('Invalid email address');
+        return;
+      }
+
+      // If the email is valid, create a new user
       await createUserWithEmailAndPassword(auth, email, password);
-      
+
       const highlightedText = (
         <>
           {' '}
           <span style={{ color: 'green' }}>Registration successful! You can now</span>.
         </>
       );
-
 
       setError(highlightedText);
       setShowRegisterForm(false);
