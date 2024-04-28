@@ -30,7 +30,7 @@ export default function App() {
 
   return (
     <div>
-      <Nav handleclick={handleClick} />
+      <Nav handleclick ={handleClick} />
       <Herosection handleclick={handleClick}/>
       <About handleclick={handleClick} />
       <InfiniteMovingCardsDemo  handleclick={handleClick} />

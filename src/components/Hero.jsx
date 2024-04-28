@@ -1,9 +1,26 @@
 "use client";
 import React from "react";
 import { HeroParallax } from "../components/ui/hero-parallax";
+import { useNavigate } from "react-router-dom";
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+
 
 export default function Hero() {
-  return <HeroParallax products={products} />;
+
+const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+const navigate = useNavigate();
+React.useEffect(() => {
+  const auth = getAuth();
+  const unsubscribe = onAuthStateChanged(auth, (user) => {
+    setIsLoggedIn(!!user);
+  });
+
+  return unsubscribe;
+}, [navigate]);
+
+
+
+  return <HeroParallax products={products} login={isLoggedIn} />;
 }
 export const products = [
   {

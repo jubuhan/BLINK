@@ -44,7 +44,16 @@ export default function Pop() {
 
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      setError('Registration successful! You can now log in.');
+      
+      const highlightedText = (
+        <>
+          {' '}
+          <span style={{ color: 'green' }}>Registration successful! You can now</span>.
+        </>
+      );
+
+
+      setError(highlightedText);
       setShowRegisterForm(false);
       setRegisterEmail('');
       setRegisterPassword('');
@@ -66,14 +75,13 @@ export default function Pop() {
           <div className="font-Raleway h-screen w-screen fixed top-0 left-0 bg-black/50 z-50 backdrop-blur-sm">
             <div className="rounded-md duration-300 w-[350px] fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-4 shadow-md bg-white">
               <div className="flex items-center justify-between">
-                <h1 className=" uppercase font-bold text-xl ml-1">User Login</h1>
+                <h1 className=" uppercase font-bold text-lg ml-1">Welcome to Blink</h1>
                 <div>
                   <img onClick={togglePop} className="w-4 cursor-pointer" src={close} alt="close" />
                 </div>
               </div>
               {!showRegisterForm ? (
-                <div className="flex flex-col gap-3">
-                  <h2 className="text-lg font-semibold">Login</h2>
+                <div className="flex flex-col gap-3 mt-5">
                   <input
                     type="text"
                     placeholder="email"
@@ -112,8 +120,7 @@ export default function Pop() {
                   </button>
                 </div>
               ) : (
-                <div className="flex flex-col gap-3">
-                  <h2 className="text-lg font-semibold">Register</h2>
+                <div className="flex flex-col gap-3 mt-5">
                   <input
                     type="text"
                     placeholder="email"

@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { usePop } from "../../stores/usePop";
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+
 
 import {
   motion,
@@ -8,6 +10,7 @@ import {
   useSpring,
   MotionValue,
 } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 
 export const HeroParallax = ({
@@ -28,6 +31,7 @@ export const HeroParallax = ({
   });
 
   const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
+
 
   const translateX = useSpring(
     useTransform(scrollYProgress, [0, 1], [0, 1000]),
@@ -53,6 +57,8 @@ export const HeroParallax = ({
     useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
     springConfig
   );
+
+
   return (
     <div
       ref={ref}
@@ -100,7 +106,21 @@ export const HeroParallax = ({
   );
 };
 
+
+
 export const Header = () => {
+
+ const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+const navigate = useNavigate();
+useEffect(() => {
+  const auth = getAuth();
+  const unsubscribe = onAuthStateChanged(auth, (user) => {
+    setIsLoggedIn(!!user);
+  });
+
+  return unsubscribe;
+}, [navigate]);
+
   const {pop, togglePop} = usePop();
 
   return (
@@ -111,9 +131,15 @@ export const Header = () => {
       <p data-aos="fade-up" className="max-w-2xl text-lg md:text-xl mt-8 dark:text-neutral-200 tracking-wider 	letter-spacing: 0.05em">
       Welcome to Blink ! see the world in full spectrum.
       </p>
-      <div data-aos="fade-up">
-        <button onClick={togglePop} className="z-20 shadow-lg mt-10 w-[150px] text-black bg-white font-Raleway rounded-full px-3 py-2 hover:scale-105 transition duration-300">Get started</button>
+      {isLoggedIn ?
+        (<div data-aos="fade-up">
+        <button onClick={()=>navigate('/home')} className="z-20 shadow-lg mt-10 w-[150px] text-black bg-white font-Raleway rounded-full px-3 py-2 hover:scale-105 transition duration-300">Get started</button>
       </div>
+      ):(
+        <div data-aos="fade-up">
+        <button onClick={togglePop} className="z-20 shadow-lg mt-10 w-[150px] text-black bg-white font-Raleway rounded-full px-3 py-2 hover:scale-105 transition duration-300">Get started</button>
+      </div>)
+      }
     </div>
   );
 };

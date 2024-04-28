@@ -16,7 +16,7 @@ export default function about() {
                 <div className='flex items-center'>
                     <div className='flex flex-col gap-2 py-10 sm:mt-8 mt-16 sm:right-0  sm:w-[700px] w-[500px] absolute z-10'>
                         <h1 data-aos="zoom-in" className='text-2xl sm:text-6xl text-black uppercase font-bold'>Why Blink?</h1>
-                        <p data-aos="fade-up" className=' mt-2  text-sm sm:text-xl'>{words}</p>
+                        <p data-aos="fade-up" className=' mt-2 text-sm sm:text-xl'>{words}</p>
                         <div data-aos="fade-up">
                             <button onClick={togglePop}  className="mt-5 w-[150px] hover:shadow-lg bg-black/95 border-black text-white hover:bg-white hover:text-black font-Raleway rounded-full px-3 py-2 hover:scale-105 transition duration-300">Get started</button>
                         </div>
