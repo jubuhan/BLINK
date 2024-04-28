@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from "../../components/navbar"
+import Navbar from "../../components/navbar";
+import { Link } from 'react-router-dom';
 
 const Astigmatism = () => {
     const [currentStep, setCurrentStep] = useState(0);
     const [isReady, setIsReady] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [responses, setResponses] = useState([]);
-
 
     const steps = [
         {
@@ -31,6 +31,7 @@ const Astigmatism = () => {
             return (
                 <div className='px-2 text-center'>
                     <p className='text-xl sm:text-2xl mt-5'>Because you see all the lines in the images black and clear, you may not have Astigmatism.</p>
+                    <Link to="/home" className='mt-5 w-[150px] hover:shadow-lg hover:scale-105 transition duration-300 hover:bg-white hover:text-black bg-black/95 border-black text-white font-Raleway rounded-full px-3 py-2'>Back to Test</Link>
                 </div>
             )
         }
@@ -39,6 +40,7 @@ const Astigmatism = () => {
                 <div className='px-2 text-center'>
                     <p className='text-xl sm:text-2xl mt-5'>You are having minor signs of astigmatism for both eyes.</p>
                     <p className='text-xl sm:text-2xl mt-5'>Visit your eye care practitioner and get your eyes thoroughly checked</p>
+                    <Link to="/home" className='mt-5 w-[150px] hover:shadow-lg hover:scale-105 transition duration-300 hover:bg-white hover:text-black bg-black/95 border-black text-white font-Raleway rounded-full px-3 py-2'>Back to Test</Link>
                 </div>
             )
         }
@@ -47,6 +49,7 @@ const Astigmatism = () => {
                 <div className='px-2 text-center'>
                     <p className='text-xl sm:text-2xl mt-5'>There may be a possibility that your <span className='font-bold'>Right</span> eye might be astigmatic as you seem to see some lines darker than the rest.</p>
                     <p className='text-xl sm:text-2xl mt-5'>Visit your eye doctor to get your eyes checked.</p>
+                    <Link to="/home" className='mt-5 w-[150px] hover:shadow-lg hover:scale-105 transition duration-300 hover:bg-white hover:text-black bg-black/95 border-black text-white font-Raleway rounded-full px-3 py-2'>Back to Test</Link>
                 </div>
             )
         }
@@ -55,12 +58,11 @@ const Astigmatism = () => {
                 <div className='px-2 text-center'>
                     <p className='text-xl sm:text-2xl mt-5'>There may be a possibility that your <span className='font-bold'>Left</span> eye might be astigmatic as you seem to see some lines darker than the rest.</p>
                     <p className='text-xl sm:text-2xl mt-5'>Visit your eye doctor to get your eyes checked.</p>
+                    <Link to="/home" className='mt-5 w-[150px] hover:shadow-lg hover:scale-105 transition duration-300 hover:bg-white hover:text-black bg-black/95 border-black text-white font-Raleway rounded-full px-3 py-2'>Back to Test</Link>
                 </div>
             )
         }
     };
-
-
 
     useEffect(() => {
         if (currentImageIndex === steps[currentStep].images.length) {
@@ -85,33 +87,27 @@ const Astigmatism = () => {
         const { instruction, images, questions } = steps[currentStep];
         if (!isReady) {
             return (
-
                 <div className='py-10 font-Raleway'>
                     <div className='container px-6'>
                         <div className='flex flex-col items-center gap-6'>
-
                             <h1 className='sm:text-6xl text-4xl font-medium text-center'>Astigmatism Test</h1>
-
                             <p className='text-2xl font-bold mt-5'>Instructions</p>
                             <div className='flex flex-col items-center'>
-                                {currentStep == 0 ?
-                                    (<ol className='list-decimal'>
+                                {currentStep === 0 ? (
+                                    <ol className='list-decimal'>
                                         <li className='text-lg sm:text-xl mt-2'>Keep a distance of at least 1m from the screen.</li>
                                         <li className='text-lg sm:text-xl mt-2'>Close your left eye and concentrate on the image with your right eye.</li>
                                     </ol>
-                                    ) :
-                                    (
-                                        <ol className='list-decimal'>
-                                            <li className='text-lg sm:text-xl mt-2'>Now close you right eye and concentrate on the image with your left eye</li>
-                                        </ol>
-                                    )
-                                }
+                                ) : (
+                                    <ol className='list-decimal'>
+                                        <li className='text-lg sm:text-xl mt-2'>Now close you right eye and concentrate on the image with your left eye</li>
+                                    </ol>
+                                )}
                             </div>
                             <button onClick={handleReady} className='mt-5 w-[150px] hover:shadow-lg hover:scale-105 transition duration-300 hover:bg-white hover:text-black bg-black/95 border-black text-white font-Raleway rounded-full px-3 py-2'>Ready</button>
-
                         </div>
                     </div>
-                </div >
+                </div>
             );
         }
 
@@ -126,8 +122,6 @@ const Astigmatism = () => {
                 const secondInstructionBadImages = responses.slice(
                     steps[0].images.length
                 ).includes(true);
-
-
 
                 return (
                     <>
