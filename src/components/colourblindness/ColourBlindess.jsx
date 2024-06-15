@@ -90,7 +90,7 @@ import { useNavigate } from 'react-router-dom';
         {
             path: `../src/assets/ishiharapates/image14.jpg`,
             value: 'Orange line',
-            options: ['Orange line', 'Nothing or false line', 'Nothing or false line '], // Options specific to image 2
+            options: ['Orange line', 'Nothing or false line', 'Green line'], // Options specific to image 2
         },
 
 
