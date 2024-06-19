@@ -13,12 +13,12 @@ const Astigmatism = () => {
         {
             instruction: '',
             images: ['../src/assets/asti/image1.jpg', '../src/assets/asti/image2.jpg'],
-            questions: ['Do you see the vertical lines and horizontal lines equally clear and with same thickness? If Yes, then click the YES button otherwise click the NO button below the image.', 'Do all the radiating heavy black line are of different intensities and thickness? If Yes, then click the YES button otherwise click the NO button below the image.'],
+            questions: ['Do you see the vertical lines and horizontal lines unequal,blur  and with different thickness? If Yes, then click the YES button otherwise click the NO button below the image.','Do all the radiating heavy black line are of different intensities and thickness? If Yes, then click the YES button otherwise click the NO button below the image.'],
         },
         {
             instruction: 'Instruction 2',
             images: ['../src/assets/asti/image1.jpg', '../src/assets/asti/image2.jpg'],
-            questions: ['Do you see the vertical lines and horizontal lines equally clear and with same thickness? If Yes, then click the YES button otherwise click the NO button below the image.', 'Do all the radiating heavy black line are of different intensities and thickness? If Yes, then click the YES button otherwise click the NO button below the image.'],
+            questions: ['Do you see the vertical lines and horizontal lines unequal,blur  and with different thickness? If Yes, then click the YES button otherwise click the NO button below the image.','Do all the radiating heavy black line are of different intensities and thickness? If Yes, then click the YES button otherwise click the NO button below the image.'],
         },
         // Add more steps with instructions, images, and questions as needed
     ];
