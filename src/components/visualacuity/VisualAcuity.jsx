@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const imageData = [
     { src: '../src/assets/visualAcuity/chartimg1.png', value: '20/200' },
     { src: '../src/assets/visualAcuity/chartimg2.png', value: '20/100' },
-    { src: '../src/assets/visualAcuity/chartimg3.png', value: '20/70' },
+    { src: '../src/assets/visualAcuity/chartimg3.png', value: '20/80' },
     { src: '../src/assets/visualAcuity/chartimg4.png', value: '20/50' },
     { src: '../src/assets/visualAcuity/chartimg5.png', value: '20/40' },
     { src: '../src/assets/visualAcuity/chartimg6.png', value: '20/30' },
