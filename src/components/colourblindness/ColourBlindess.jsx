@@ -183,7 +183,7 @@ import { useNavigate } from 'react-router-dom';
                                             ))}
                                         </div>
                                         <div className=" mt-10">
-                                            <p className='text-xl mt-3 font-medium'>Score : {count}</p>
+                                    
                                           
                                         </div>
                                     </div>
