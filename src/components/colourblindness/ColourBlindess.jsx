@@ -159,7 +159,7 @@ import { useNavigate } from 'react-router-dom';
 
                                     {/* Display messages based on count, pcount, and dcount */}
                                     <p>
-                                        {count < 7 ? (
+                                        {count < 13 ? (
                                             <p className='text-4xl font-medium text-center text-red-600 mt-3'>Bad</p>
                                         ) : (
                                             <p className='text-4xl font-medium text-center text-green-600 mt-3'>Good</p>
@@ -182,11 +182,7 @@ import { useNavigate } from 'react-router-dom';
                                                 </button>
                                             ))}
                                         </div>
-                                        <div className=" mt-10">
-                                            <p className='text-xl mt-3 font-medium'>Score : {count}</p>
-                                            <p className='text-xl mt-3 font-medium'>Pcount: {pcount}</p>
-                                            <p className='text-xl mt-3 font-medium'>Dcount: {dcount}</p>
-                                        </div>
+                                 
                                     </div>
                                 </>
                             )
